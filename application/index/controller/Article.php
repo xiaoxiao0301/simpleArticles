@@ -3,11 +3,11 @@ namespace app\index\controller;
 
 use think\Controller;
 
-class Index extends Controller
+class Article extends Controller
 {
     public function index()
     {
-        $this->assign('title', '首页');
+        $this->assign('title', '文章页');
         return $this->fetch();
     }
 }
