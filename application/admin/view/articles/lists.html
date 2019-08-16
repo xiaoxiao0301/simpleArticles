@@ -10,13 +10,13 @@
             <div class="page-breadcrumbs">
                 <ul class="breadcrumb">
                     <li><a href="{:url('index/index')}">系统</a></li>
-                    <li class="active">用户管理</li>
+                    <li class="active">文章管理</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
             <!-- Page Body -->
             <div class="page-body">
-                <button type="button" tooltip="添加友情链接" class="btn btn-sm btn-azure btn-addon" onClick="add()">
+                <button type="button" tooltip="添加文章" class="btn btn-sm btn-azure btn-addon" onClick="add()">
                     <i class="fa fa-plus"></i> Add
                 </button>
                 <div class="row">
@@ -28,9 +28,13 @@
                                         <thead class="">
                                             <tr>
                                                 <th class="text-center">ID</th>
-                                                <th class="text-center">链接标题</th>
-                                                <th class="text-center">链接地址</th>
-                                                <th class="text-center">链接简介</th>
+                                                <th class="text-center">栏目名称</th>
+                                                <th class="text-center">文章标题</th>
+                                                <th class="text-center">作者</th>
+                                                <th class="text-center">缩略图</th>
+                                                <th class="text-center">发布时间</th>
+                                                <th class="text-center">点击数</th>
+                                                <th class="text-center">推荐</th>
                                                 <th class="text-center">操作</th>
                                             </tr>
                                         </thead>
@@ -38,14 +42,24 @@
                                             {volist name="lists" id="list"}
                                                 <tr>
                                                     <td align="center">{$list.id}</td>
+                                                    <!-- 通过关联模型获取关联字段的值-->
+                                                    <td align="center">{$list.cates.cate_name}</td>
                                                     <td align="center">{$list.title}</td>
-                                                    <td align="center"><a href="{$list.url}" target="_blank">{$list.url}</a></td>
-                                                    <td align="center">{$list.desc}</td>
+                                                    <td align="center">{$list.author}</td>
+                                                    <td align="center" style="height: 50px;width:50px;"><img src="{$list.pic}" width="100%" height="100%"></td>
+                                                    <td align="center">{$list.time|date='Y-m-d H:i:s',###}</td>
+                                                    <td align="center">{$list.click}</td>
+                                                    <td align="center">{$list.state == 1 ? '已推荐' : '未推荐'}</td>
                                                     <td align="center">
-                                                        <a href="{:url('links/edit', ['id' => $list.id])}" class="btn btn-primary btn-sm shiny">
+                                                        {if condition="$list.state eq 0"}
+                                                            <a href="{:url('articles/recommend', ['id' => $list.id])}" class="btn btn-success btn-sm shiny">
+                                                                <i class="fa fa-edit"></i> 推荐
+                                                            </a>
+                                                        {/if}
+                                                        <a href="{:url('articles/edit', ['id' => $list.id])}" class="btn btn-primary btn-sm shiny">
                                                             <i class="fa fa-edit"></i> 编辑
                                                         </a>
-                                                        <a href="#" onClick="warning('确实要删除吗', '{:url('links/delete',['id'=>$list.id])}')" class="btn btn-danger btn-sm shiny">
+                                                        <a href="#" onClick="warning('确实要删除吗', '{:url('articles/delete',['id'=>$list.id])}')" class="btn btn-danger btn-sm shiny">
                                                             <i class="fa fa-trash-o"></i> 删除
                                                         </a>
                                                     </td>
@@ -69,7 +83,7 @@
 </div>
 <script>
     function add() {
-        window.location.href = "{:url('links/add')}";
+        window.location.href = "{:url('articles/add')}";
     }
 </script>
 <!--Basic Scripts-->

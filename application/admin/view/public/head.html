@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__ADMIN__/style/index.css" rel="stylesheet">
     <!--Basic Styles-->
     <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
     <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
@@ -16,6 +17,16 @@
     <link href="__ADMIN__/style/demo.css" rel="stylesheet">
     <link href="__ADMIN__/style/typicons.css" rel="stylesheet">
     <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+
+    <style>
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+            vertical-align : text-top;
+        }
+    </style>
+
+    <script type="text/javascript" src="__ADMIN__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
 <!-- 头部 -->
@@ -46,7 +57,7 @@
                                     <img src="__ADMIN__/images/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>admin</span></span></h2>
+                                    <h2><span class="profile"><span>{$Think.session.adminName}</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->

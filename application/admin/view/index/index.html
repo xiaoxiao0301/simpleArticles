@@ -1,43 +1,115 @@
 {include file="public/head"}
-	<div class="main-container container-fluid">
-		<div class="page-container">
-            <!-- Page Sidebar -->
-            {include file="public/nav"}
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li class="active">控制面板</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-
-				<div style="text-align:center; line-height:1000%; font-size:24px;">
-                童老师THinkPHP5.0正式版 第一季 博客项目开发<br>
-                <p style="color:#aaa;">ThinkPHP交流群①：484519446【满】 | 群②：480018415【满】  | 群③：198909858</p></div>
-                </div>
-
-
-                </div>
-                <!-- /Page Body -->
+<div class="main-container container-fluid">
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        {include file="public/nav"}
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li class="active">系统信息列表</li>
+                </ul>
             </div>
-            <!-- /Page Content -->
-		</div>
-	</div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="contentWarp">
+                    <div class="section system_section" style="float: none;width: inherit;">
+                        <div class="section_order_count">
+                            <div class="sc_title" style="padding: 26px 0 14px;border-bottom: 1px solid #e4eaec;">
+                                <i class="sc_icon" style="top: 47px;"></i>
+                                <h3>版本信息</h3>
+                            </div>
+                            <div class="sc_warp" style="display: block;padding-bottom: 30px;">
+                                <table cellpadding="0" cellspacing="0" class="system_table">
+                                    <tbody>
+                                    <tr>
+                                        <td class="gray_bg">程序版本:</td>
+                                        <td>v2.0.0</td>
+                                        <td class="gray_bg">更新时间:</td>
+                                        <td><?php echo date('Y-m-d');?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">程序开发:</td>
+                                        <td>xiaoxiao</td>
+                                        <td class="gray_bg">版权所有:</td>
+                                        <td>盗版必究</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-	    <!--Basic Scripts-->
-    <script src="__ADMIN__/style/jquery_002.js"></script>
-    <script src="__ADMIN__/style/bootstrap.js"></script>
-    <script src="__ADMIN__/style/jquery.js"></script>
-    <!--Beyond Scripts-->
-    <script src="__ADMIN__/style/beyond.js"></script>
-    
+                <div class="contentWarp">
+                    <div class="section system_section" style="float: none;width: inherit;">
+                        <div class="system_section_con">
+                            <div class="sc_title" style="padding: 26px 0 14px;border-bottom: 1px solid #e4eaec;">
+                                <i class="sc_icon" style="top: 47px;"></i>
+                                <h3>系统信息</h3>
+                                <!--<span class="stop stop_jia" id="system_section" title="展开详情"></span>-->
+                            </div>
+                            <div class="sc_warp" id="system_warp" style="display: block;padding-bottom: 30px;">
+                                <table cellpadding="0" cellspacing="0" class="system_table">
+                                    <tbody>
+                                    <tr>
+                                        <td class="gray_bg">服务器操作系统:</td>
+                                        <td>{$sys_info.os}</td>
+                                        <td class="gray_bg">服务器域名/IP:</td>
+                                        <td>{$sys_info.domain} [ {$sys_info.ip} ]</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">服务器环境:</td>
+                                        <td>{$sys_info.web_server}</td>
+                                        <td class="gray_bg">PHP 版本:</td>
+                                        <td>{$sys_info.phpv}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">Mysql 版本:</td>
+                                        <td>{$sys_info.mysql_version}</td>
+                                        <td class="gray_bg">GD 版本:</td>
+                                        <td>{$sys_info.gdinfo}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">文件上传限制:</td>
+                                        <td>{$sys_info.fileupload}</td>
+                                        <td class="gray_bg">最大占用内存:</td>
+                                        <td>{$sys_info.memory_limit}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">最大执行时间:</td>
+                                        <td>{$sys_info.max_ex_time}</td>
+                                        <td class="gray_bg">安全模式:</td>
+                                        <td>{$sys_info.safe_mode}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_bg">Zlib支持:</td>
+                                        <td>{$sys_info.zlib}</td>
+                                        <td class="gray_bg">Curl支持:</td>
+                                        <td>{$sys_info.curl}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+</div>
+<!--Basic Scripts-->
+<script src="__ADMIN__/style/jquery_002.js"></script>
+<script src="__ADMIN__/style/bootstrap.js"></script>
+<script src="__ADMIN__/style/jquery.js"></script>
+<!--Beyond Scripts-->
+<script src="__ADMIN__/style/beyond.js"></script>
 </body>
 </html>

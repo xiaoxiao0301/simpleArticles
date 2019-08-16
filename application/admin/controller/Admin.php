@@ -1,12 +1,10 @@
 <?php
 namespace app\admin\controller;
 use app\admin\model\AdminModel;
-use think\Controller;
 use think\Db;
 use think\Loader;
-use think\Validate;
 
-class Admin extends Controller
+class Admin extends BaseController
 {
     public function lists()
     {
@@ -95,6 +93,21 @@ class Admin extends Controller
 
     public function change()
     {
+        $this->assign('id', session('adminId'));
+        $this->assign('title', '修改密码');
         return $this->fetch();
+    }
+
+    public function updatePassword()
+    {
+        $id = input('post.id');
+        $passWord = input('post.password');
+        $res = AdminModel::where('id', '=', $id)->update(['password' => md5($passWord)]);
+        if ($res) {
+            session(null);
+            $this->success('更新成功，请使用新密码重新登录', 'admin/login/login');
+        } else {
+            $this->error('更新失败，稍后再试');
+        }
     }
 }

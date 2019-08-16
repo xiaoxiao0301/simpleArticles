@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta name="description" content="xiaoxiao tp5 blog login page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+    <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet">
+    <link href="__ADMIN__/style/demo.css" rel="stylesheet">
+    <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+</head>
+<!--Head Ends-->
+<!--Body-->
+
+<body>
+    <div class="login-container animated fadeInDown">
+        <form action="{:url('login/handleLogin')}" method="post">
+            <div class="loginbox bg-white">
+                <div class="loginbox-title">SIGN IN</div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="username" name="username" type="text">
+                </div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="password" name="password" type="password" >
+                </div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="验证码" name="code" type="text" style="width: 80px;float: left;">
+                    <img src="{:captcha_src()}" alt="captcha" style="float: left; margin-left:26px; cursor: pointer;" onclick="this.src='{:captcha_src()}?'+Math.random()"/>
+                </div>
+                <div class="loginbox-submit">
+                    <input class="btn btn-primary btn-block" value="Login" type="submit" style="margin-top: 10px;">
+                </div>
+            </div>
+<!--            <div class="logobox" style="display: none">-->
+<!--                <p class="text-center">错误提示信息</p>-->
+<!--            </div>-->
+        </form>
+    </div>
+    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+</body>
+</html>

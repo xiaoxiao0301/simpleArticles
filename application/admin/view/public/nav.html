@@ -9,13 +9,16 @@
     <!-- Sidebar Menu -->
     <ul class="nav sidebar-menu">
         <!--Dashboard-->
+
+
         <li>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-user"></i><span class="menu-text">管理员</span><i class="menu-expand"></i>
+                <i class="menu-icon fa fa-list"></i><span class="menu-text">栏目</span><i class="menu-expand"></i>
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="{:url('admin/lists')}"><span class="menu-text">管理列表</span><i class="menu-expand"></i></a>
+                    <a href="{:url('cates/lists')}"><span class="menu-text">栏目列表</span><i class="menu-expand"></i>
+                    </a>
                 </li>
             </ul>
         </li>
@@ -26,7 +29,7 @@
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="/admin/document/index.html"><span class="menu-text">文章列表</span><i class="menu-expand"></i></a>
+                    <a href="{:url('articles/lists')}"><span class="menu-text">文章列表</span><i class="menu-expand"></i></a>
                 </li>
             </ul>
         </li>
@@ -45,11 +48,23 @@
 
         <li>
             <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-user"></i><span class="menu-text">管理员</span><i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('admin/lists')}"><span class="menu-text">管理列表</span><i class="menu-expand"></i></a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-gear"></i><span class="menu-text">系统</span><i class="menu-expand"></i>
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="/admin/document/index.html"><span class="menu-text"> 配置</span> <i class="menu-expand"></i></a>
+                    <a href="{:url('index/index')}"><span class="menu-text"> 系统信息</span> <i class="menu-expand"></i></a>
                 </li>
             </ul>
         </li>
