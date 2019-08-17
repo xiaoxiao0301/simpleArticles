@@ -6,7 +6,7 @@ use app\admin\model\CatesModel;
 use think\Db;
 use think\Loader;
 
-class Articles extends BaseController
+class Articles extends Base
 {
     public function lists()
     {
@@ -101,7 +101,7 @@ class Articles extends BaseController
                 'title' => input('post.title'),
                 'author' => input('post.author'),
                 'desc' => input('post.desc'),
-                'keywords' => input('post.keywords'),
+                'keywords' => str_replace('，',',',input('post.keywords')),
                 'content' => input('post.content'),
                 'cate_id' => input('post.cate_id'),
                 'pic' => $new_name
@@ -160,7 +160,7 @@ class Articles extends BaseController
                 'title' => input('post.title'),
                 'author' => input('post.author'),
                 'desc' => input('post.desc'),
-                'keywords' => input('post.keywords'),
+                'keywords' => str_replace('，',',',input('post.keywords')),
                 'content' => input('post.content'),
                 'cate_id' => input('post.cate_id'),
                 'id' => input('id'),

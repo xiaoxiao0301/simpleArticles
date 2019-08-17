@@ -34,7 +34,7 @@
                                                 <th class="text-center">缩略图</th>
                                                 <th class="text-center">发布时间</th>
                                                 <th class="text-center">点击数</th>
-                                                <th class="text-center">推荐</th>
+                                                <th class="text-center">关键字</th>
                                                 <th class="text-center">操作</th>
                                             </tr>
                                         </thead>
@@ -49,13 +49,11 @@
                                                     <td align="center" style="height: 50px;width:50px;"><img src="{$list.pic}" width="100%" height="100%"></td>
                                                     <td align="center">{$list.time|date='Y-m-d H:i:s',###}</td>
                                                     <td align="center">{$list.click}</td>
-                                                    <td align="center">{$list.state == 1 ? '已推荐' : '未推荐'}</td>
+                                                    <td align="center">{$list.keywords}</td>
                                                     <td align="center">
-                                                        {if condition="$list.state eq 0"}
-                                                            <a href="{:url('articles/recommend', ['id' => $list.id])}" class="btn btn-success btn-sm shiny">
-                                                                <i class="fa fa-edit"></i> 推荐
-                                                            </a>
-                                                        {/if}
+                                                        <a href="{:url('articles/recommend', ['id' => $list.id])}" class="btn btn-success btn-sm shiny">
+                                                            <i class="fa fa-edit"></i> 推荐
+                                                        </a>
                                                         <a href="{:url('articles/edit', ['id' => $list.id])}" class="btn btn-primary btn-sm shiny">
                                                             <i class="fa fa-edit"></i> 编辑
                                                         </a>

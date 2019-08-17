@@ -7,7 +7,7 @@ namespace app\admin\controller;
 use think\Controller;
 use think\Request;
 
-class BaseController extends Controller
+class Base extends Controller
 {
 
     public function __construct(Request $request = null)

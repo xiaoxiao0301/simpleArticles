@@ -5,7 +5,7 @@ use app\admin\model\CatesModel;
 use think\Db;
 use think\Loader;
 
-class Cates extends BaseController
+class Cates extends Base
 {
     public function lists()
     {

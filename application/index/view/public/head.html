@@ -6,24 +6,35 @@
     <meta name="description" content="xiaoxiao个人博客" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <link href="__HOME__/style/lady.css" type="text/css" rel="stylesheet" />
+    <link href="__HOME__/style/bootstrap.css" type="text/css" rel="stylesheet" />
     <script type='text/javascript' src='__HOME__/style/ismobile.js'></script>
+    <script type='text/javascript' src='__HOME__/style/jquery-1.11.3.min.js'></script>
+    <style>
+        .ladytop {
+            height: 60px;
+        }
+
+        .pages .plist li {
+            border: 0px;
+        }
+        .currentss {
+            background: #32adad;
+        }
+    </style>
 </head>
 
 <body>
-
 <div class="ladytop">
     <div class="nav">
-        <div class="left"><a href=""><img src="__HOME__/images/hunshang.png" alt="wed114婚尚"></a></div>
+        <div class="left"><a href="{:url('index/index')}" target="_blank"><img src="__HOME__/images/hunshang.png" alt="tp5"></a></div>
         <div class="right">
             <div class="box">
-                <a href="hunjia/"  rel='dropmenu209'>婚嫁</a> <a href="meirong/"  rel='dropmenu110'>美容</a> <a href="fushi/"  rel='dropmenu112'>服饰</a> <a href="yule/"  rel='dropmenu118'>娱乐</a> <a href="jiankang/"  rel='dropmenu120'>健康</a> <a href="meishi/"  rel='dropmenu122'>美食</a> <a href=""  rel='dropmenu117'>生活</a> <a href="tuku/"  rel='dropmenu103'>图库</a> <a href="zhuanti/" >专题</a>
+                <span><a href="{:url('index/index')}" {if condition="$cate_name == '首页'"}class="currentss"{/if}>首页</a></span>
+                {foreach name="cates" item="cate"}
+                    <span><a href="{:url('cate/index',['id' => $cate->id, 'cate_name' => $cate->cate_name])}"  target="_blank" {if condition="$cate->cate_name == $cate_name"}class="currentss"{/if}>{$cate->cate_name}</a></span>
+                {/foreach}
             </div>
         </div>
     </div>
 </div>
-
-<div class="hotmenu">
-    <div class="con">热门标签：<a href='qiwenqushi/'>奇闻趣事</a> <a href=''>生活妙招</a> <a href='xingzuo/'>星座</a> <a href='qinzi/'>亲子</a> <a href='qiche/'>汽车</a> <a href='chongwubaike/'>宠物百科</a> <a href='jiaji/'>家居</a> </div>
-</div>
-
 <!--顶部通栏-->

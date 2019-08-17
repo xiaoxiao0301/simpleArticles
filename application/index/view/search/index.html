@@ -1,0 +1,40 @@
+{include file="public/head"}
+<div class="position">
+	<span>搜索</span> >
+	<span>{$keywords == '' ? '全部' : $keywords}</span>
+</div>
+<div class="overall">
+	<div class="left">
+		{foreach name="searchInfo" item="vo"}
+			<div class="xnews2">
+				<div class="pic">
+					<a target="_blank" href="{:url('article/index', ['id' => $vo['id'], 'cate_name' => $vo['cate_name']])}">
+						<img src="{$vo['pic']}" alt="{$vo['desc']}"/>
+					</a>
+				</div>
+				<div class="dec">
+					<h3>
+						<a target="_blank" href="{:url('article/index', ['id' => $vo['id'], 'cate_name' => $vo['cate_name']])}">{$vo['title']}</a>
+					</h3>
+					<div class="time">发布时间：{$vo['time']|date='Y-m-d',###}</div>
+					<p>
+						{$vo['desc']}
+					</p>
+					<div class="time">
+						{foreach name="vo['keywords']" item="words"}
+							<a target="_blank" href="{:url('search/index',['keywords' => $words])}">{$words}</a>
+						{/foreach}
+					</div>
+				</div>
+			</div>
+		{/foreach}
+		<div class="pages" style="height:55px;">
+			<div class="plist" >
+				{$page}
+			</div>
+		</div>
+	</div>
+	{include file="public/right"}
+
+</div>
+{include file="public/footer"}

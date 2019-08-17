@@ -4,7 +4,7 @@ use app\admin\model\AdminModel;
 use think\Db;
 use think\Loader;
 
-class Admin extends BaseController
+class Admin extends Base
 {
     public function lists()
     {

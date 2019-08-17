@@ -5,7 +5,7 @@ use app\admin\model\LinksModel;
 use think\Db;
 use think\Loader;
 
-class Links extends BaseController
+class Links extends Base
 {
     public function lists()
     {
